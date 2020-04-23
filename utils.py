@@ -3,7 +3,8 @@
 import numpy as np
 
 def anchor_boxes(feature_shape, image_shape, index=0, n_layers=4, aspect_ratios=(1, 2, 0.5)):
-    """ Compute the anchor boxes for a given feature map"""
+    
+	""" Compute the anchor boxes for a given feature map"""
 
 	s = np.linspace(0.2, 0.9, n_layers + 1)
 	size = [[s[i], np.sqrt(s[i]*s[i+1])] for i in range(len(s) - 1)]
@@ -125,7 +126,8 @@ def iou(boxes1, boxes2):
 
 
 def get_gt_data(iou, n_classes=4, anchors=None, labels=None, normalize=False, threshold=0.6):
-    """Retrieve ground truth class, bbox offset, and mask"""
+    
+	"""Retrieve ground truth class, bbox offset, and mask"""
 
 	maxiou_per_gt = np.argmax(iou, axis=0)
 
