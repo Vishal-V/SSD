@@ -51,7 +51,8 @@ def conv_layer(inputs, filters=32, kernel_size=3, strides=1, use_maxpool=True,
 
 def resnet_layer(inputs, num_filters=16, kernel_size=3, strides=1, activation='relu', batch_normalization=True,
                  conv_first=True):
-     conv = Conv2D(num_filters, kernel_size=kernel_size, strides=strides, padding='same', 
+
+    conv = Conv2D(num_filters, kernel_size=kernel_size, strides=strides, padding='same', 
         kernel_initializer='he_normal', kernel_regularizer=l2(1e-4))
 
     x = inputs
